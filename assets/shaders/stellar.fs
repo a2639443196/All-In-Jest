@@ -1,3 +1,11 @@
+// === GLSL Fix Log ===
+// 修复时间: Thu Jul 24 10:28:04 CST 2025
+// 文件来源: stellar.fs
+// 共修改 2 行
+// 第 46 行："for (int i = 0; i < 5; i++) {" → "for (float i = 0.0; i < 5.0; i++) {"
+// 第 186 行："return transform_projection * vertex_position + vec4(0,0,0, sc);" → "return transform_projection * vertex_position + vec4(0.0,0.0,0.0, sc);"
+// =====================
+
 #if defined(VERTEX) || __VERSION__ > 100 || defined(GL_FRAGMENT_PRECISION_HIGH)
     #define MY_HIGHP_OR_MEDIUMP highp
 #else
@@ -18,7 +26,7 @@ extern PRECISION vec2 mouse_screen_pos;
 extern PRECISION float hovering; 
 extern PRECISION float screen_scale; 
 
-uniform float rand_seed;
+uniform PRECISION float rand_seed;
 
 float hash(vec2 p) {
     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
@@ -43,7 +51,7 @@ float rand(in vec2 seed) {
 float fbm(vec2 p) {
     float f = 0.0;
     float amp = 0.5;
-    for (int i = 0; i < 5; i++) {
+    for (float i = 0.0; i < 5.0; i++) {
         f += amp * noise(p);
         p *= 2.0;
         amp *= 0.5;
@@ -183,6 +191,6 @@ vec4 position(mat4 transform_projection, vec4 vertex_position){
     float md = length(vertex_position.xy - 0.5*love_ScreenSize.xy)/length(love_ScreenSize.xy);
     vec2 mo = (vertex_position.xy - mouse_screen_pos.xy)/screen_scale;
     float sc = 0.2 * (-0.03 - 0.3*max(0.,0.3-md)) * hovering * (length(mo)*length(mo))/(2.-md);
-    return transform_projection * vertex_position + vec4(0,0,0, sc);
+    return transform_projection * vertex_position + vec4(0.0,0.0,0.0, sc);
 }
 #endif

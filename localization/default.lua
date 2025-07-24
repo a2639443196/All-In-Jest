@@ -18,6 +18,83 @@ return {
             aij_glimmer = "Glimmer",
             aij_stellar = "Stellar",
             k_aij_jest_chaotic_card = "Chaotic",
+        },
+        questions = {
+            level_1 = {
+                { q = "5 + 3 = ?", c = { "7", "8", "9" }, a = 2, reward = 1, penalty = 2 },
+                { q = "12 - 4 = ?", c = { "8", "6", "9" }, a = 1, reward = 1, penalty = 2 },
+                { q = "x + 5 = 10，x = ?", c = { "5", "4", "6" }, a = 1, reward = 1, penalty = 2 },
+                { q = "2x = 14，x = ?", c = { "6", "7", "8" }, a = 2, reward = 1, penalty = 2 },
+                { q = "For the linear function y = 2x + 1, when x = 3, y = ?", c = { "7", "6", "8" }, a = 1, reward = 1, penalty = 2 },
+                { q = "What is the square root of 49? √49 = ?", c = { "6", "7", "8" }, a = 2, reward = 1, penalty = 2 },
+                { q = "What is the sum of the fractions 1/2 + 1/3? ", c = { "2/5", "5/6", "3/5" }, a = 2, reward = 1, penalty = 2 },
+                { q = "What is the positive root of the equation x^2 = 16?", c = { "4", "-4", "±4" }, a = 1, reward = 1, penalty = 2 },
+                { q = "Which of the following is an odd number?", c = { "8", "7", "4" }, a = 2, reward = 1, penalty = 2 },
+                { q = "What is 2^3?", c = { "6", "8", "9" }, a = 2, reward = 1, penalty = 2 },
+            },
+
+            -- Level 2: Introduction to Geometry
+            level_2 = {
+                { q = "If the side length of a square is 4, what is its area?", c = { "16", "8", "12" }, a = 1, reward = 1, penalty = 2 },
+                { q = "What is the formula for the circumference of a circle?", c = { "2πr", "πr^2", "πd" }, a = 1, reward = 1, penalty = 2 },
+                { q = "What is the sum of the angles in a triangle?", c = { "90°", "180°", "360°" }, a = 2, reward = 1, penalty = 2 },
+                { q = "What is the measure of each angle in an equilateral triangle?", c = { "60°", "45°", "90°" }, a = 1, reward = 1, penalty = 2 },
+                { q = "What can be said about the diagonals of a rectangle?", c = { "equal", "unequal", "cannot be determined" }, a = 1, reward = 1, penalty = 2 },
+            },
+
+            -- Level 3: Basic Functions and Sequences
+            level_3 = {
+                { q = "For the function f(x) = x^2, what is f(x) when x = -2?", c = { "4", "-4", "-2" }, a = 1, reward = 2, penalty = 3 },
+                { q = "What is the general term formula for the sequence 2, 4, 6, 8,...?", c = { "2n", "n+2", "n^2" }, a = 1, reward = 2, penalty = 3 },
+                { q = "What type of function is y = 3x - 1?", c = { "linear function", "quadratic function", "inverse proportion function" }, a = 1, reward = 2, penalty = 3 },
+                { q = "Is y = x^2 an upward-opening parabola?", c = { "yes", "no", "cannot be determined" }, a = 1, reward = 2, penalty = 3 },
+                { q = "If y = ax + b, what is the graph always?", c = { "a straight line", "a parabola", "a hyperbola" }, a = 1, reward = 2, penalty = 3 },
+            },
+
+            -- Level 4: Intermediate Calculus
+            level_4 = {
+                { q = "What is the derivative of f(x) = x^3?", c = { "3x^2", "x^2", "3x^3" }, a = 1, reward = 2, penalty = 3 },
+                { q = "What is the integral of ∫(2x) dx?", c = { "x^2 + C", "2x^2 + C", "x^2/2 + C" }, a = 1, reward = 2, penalty = 3 },
+                { q = "What is lim(x→0) sin(x)/x?", c = { "1", "0", "∞" }, a = 1, reward = 2, penalty = 3 },
+                { q = "What does the derivative describe about a function?", c = { "rate of change", "limit", "area" }, a = 1, reward = 2, penalty = 3 },
+                { q = "What is the integral of ∫ x dx?", c = { "x^2 / 2 + C", "x^2 + C", "ln|x| + C" }, a = 1, reward = 2, penalty = 3 },
+            },
+
+            -- Level 5: Linear Algebra
+            level_5 = {
+                { q = "If matrix A is a 2x2 identity matrix, what is |A|?", c = { "0", "1", "2" }, a = 2, reward = 3, penalty = 4 },
+                { q = "If A is an invertible matrix, what is A⁻¹A?", c = { "identity matrix", "zero matrix", "transpose matrix" }, a = 1, reward = 3, penalty = 4 },
+                { q = "What is the determinant of det([[1,2],[3,4]])?", c = { "-2", "-1", "2" }, a = 1, reward = 3, penalty = 4 },
+                { q = "Which of the following sets of vectors is linearly independent?", c = { "(1,0),(0,1)", "(1,1),(2,2)", "(1,2),(3,6)" }, a = 1, reward = 3, penalty = 4 },
+                { q = "Is matrix multiplication commutative?", c = { "not commutative", "commutative", "always commutative" }, a = 1, reward = 3, penalty = 4 },
+            },
+
+            -- Level 6: Probability and Statistics
+            level_6 = {
+                { q = "What is the expected value of the standard normal distribution?", c = { "0", "1", "cannot be determined" }, a = 1, reward = 3, penalty = 4 },
+                { q = "If events A and B are not independent, what is P(A∩B)?", c = { "P(A)+P(B)", "P(A)P(B)", "P(A)P(B|A)" }, a = 3, reward = 3, penalty = 4 },
+                { q = "What is the probability of rolling an even number on a fair die?", c = { "1/2", "1/3", "2/3" }, a = 1, reward = 3, penalty = 4 },
+                { q = "What is the mean of the data: 3, 5, 7, 9?", c = { "6", "7", "8" }, a = 1, reward = 3, penalty = 4 },
+                { q = "What does a sample variance of 0 indicate?", c = { "all values are equal", "variance is small", "data is skewed" }, a = 1, reward = 3, penalty = 4 },
+            },
+
+            -- Level 7: Differential Equations and Advanced Calculus
+            level_7 = {
+                { q = "What is the general solution of the second-order differential equation y'' - y = 0?", c = { "Ae^x + Be^(-x)", "Ax^2 + Bx", "Acosx + Bsinx" }, a = 1, reward = 4, penalty = 5 },
+                { q = "What is the general solution of the differential equation y' = 3y?", c = { "Ce^{3x}", "Cx^3", "3e^{yx}" }, a = 1, reward = 4, penalty = 5 },
+                { q = "If f(x) is continuous and ∫_0^1 f(x)dx = 0, then f(x) on [0,1] is?", c = { "not necessarily zero", "always zero", "always positive" }, a = 1, reward = 4, penalty = 5 },
+                { q = "For the function f(x)=e^x, what is its derivative?", c = { "e^x", "x*e^x", "1/e^x" }, a = 1, reward = 4, penalty = 5 },
+                { q = "If f(x) = ln(x), what is f'(x)?", c = { "1/x", "ln(x)", "x" }, a = 1, reward = 4, penalty = 5 },
+            },
+
+            -- Level 8: Comprehensive Challenge Problems
+            level_8 = {
+                { q = "If matrix A satisfies A^2 = I, what can its eigenvalues only be?", c = { "±1", "0 or 1", "any real number" }, a = 1, reward = 5, penalty = 6 },
+                { q = "Let f(x) = sin(x)/x for x ≠ 0 and f(0)=1, is f(x) continuous?", c = { "continuous", "not continuous", "cannot be determined" }, a = 1, reward = 5, penalty = 6 },
+                { q = "Which of the following is NOT a property of a linear space?", c = { "existence of identity element", "closure", "associativity" }, a = 1, reward = 5, penalty = 6 },
+                { q = "If a function is not differentiable at x=0, then at that point?", c = { "a sharp point may exist", "it must be continuous", "it must be a local maximum" }, a = 1, reward = 5, penalty = 6 },
+                { q = "If a function is monotonically increasing on an interval, its derivative is?", c = { "greater than or equal to 0", "always 0", "less than 0" }, a = 1, reward = 5, penalty = 6 },
+            },
         }
     },
     descriptions = {
